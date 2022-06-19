@@ -118,7 +118,7 @@ namespace BitMiracle.LibTiff.Classic
         /// <summary>
         /// raw data buffer
         /// </summary>
-        internal byte[] m_rawdata;
+        public byte[] m_rawdata;
 
         /// <summary>
         /// # of bytes in raw data buffer
@@ -133,7 +133,7 @@ namespace BitMiracle.LibTiff.Classic
         /// <summary>
         /// bytes unread from raw buffer
         /// </summary>
-        internal int m_rawcc;
+        public int m_rawcc;
 
         /// <summary>
         /// callback parameter
@@ -279,7 +279,7 @@ namespace BitMiracle.LibTiff.Classic
         /// </summary>
         private TiffStream m_stream;
 
-        private Tiff()
+        public Tiff()
         {
             m_clientdata = 0;
             m_postDecodeMethod = PostDecodeMethodType.pdmNone;

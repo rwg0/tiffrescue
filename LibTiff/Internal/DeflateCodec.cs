@@ -23,7 +23,7 @@ using ComponentAce.Compression.Libs.zlib;
 
 namespace BitMiracle.LibTiff.Classic.Internal
 {
-    class DeflateCodec : CodecWithPredictor
+    public class DeflateCodec : CodecWithPredictor
     {
         public const int ZSTATE_INIT_DECODE = 0x01;
         public const int ZSTATE_INIT_ENCODE = 0x02;
@@ -247,7 +247,7 @@ namespace BitMiracle.LibTiff.Classic.Internal
             }
             while (m_stream.avail_out > 0);
 
-            if (m_stream.avail_out != 0)
+            if (m_stream.avail_out < 0)
             {
                 Tiff.ErrorExt(m_tif, m_tif.m_clientdata, module,
                     "{0}: Not enough data at scanline {1} (short {2} bytes)",

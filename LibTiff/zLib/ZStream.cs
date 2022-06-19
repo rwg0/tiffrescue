@@ -47,7 +47,7 @@ namespace ComponentAce.Compression.Libs.zlib
 #if EXPOSE_ZLIB
     public
 #endif
-    sealed class ZStream
+    public sealed class ZStream
     {
         private const int MAX_WBITS = 15; // 32K LZ77 window		
         private const int DEF_WBITS = MAX_WBITS;

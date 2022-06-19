@@ -20,7 +20,7 @@ namespace BitMiracle.LibTiff.Classic.Internal
     /// it should pass pointer to a object derived from TiffTagMethods
     /// as parameter to TIFFPredictorInit
     /// </summary>
-    class CodecWithPredictor : TiffCodec
+    public class CodecWithPredictor : TiffCodec
     {
         public const int FIELD_PREDICTOR = (FieldBit.Codec + 0);
         
