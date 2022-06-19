@@ -1,3 +1,11 @@
+TiffRescue
+==========
+
+TiffRescue is a tool built on LibTiff.NET that can potentially recover image data from truncated compressed TIFF files.
+
+In order to recover image data, the TIFF file must be compressed using 'Deflate' compression and have a single colour channel (image plane), and be 16 bit.
+You will need to know the width and height of the image.
+
 LibTiff.NET
 ===========
 

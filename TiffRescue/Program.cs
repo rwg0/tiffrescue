@@ -24,15 +24,15 @@ namespace TiffRescue
             {
                 Console.WriteLine("This utility may be able to rescue image data from compressed TIF files");
                 Console.WriteLine("that are missing their metadata section. The file must be single channel");
-                Console.WriteLine("(ie MONO or RAW), 8 or 16 bit per pixel and saved with DEFLATE compression.");
-                Console.WriteLine("You need to know the width, height and bit depth of the file.");
+                Console.WriteLine("(ie MONO or RAW), and be 16 bit per pixel and saved with DEFLATE compression.");
+                Console.WriteLine("You need to know the width and height of the image.");
                 Console.WriteLine();
 
 
 
-                Console.WriteLine("Usage: TiffRescue <WIDTH>x<HEIGHT>x<BITDEPTH> Filename.tif");
+                Console.WriteLine("Usage: TiffRescue <WIDTH>x<HEIGHT> Filename.tif");
                 Console.WriteLine("");
-                Console.WriteLine("ie: TiffRescue 640x480x16 broken.tif");
+                Console.WriteLine("ie: TiffRescue 640x480 broken.tif");
                 Console.WriteLine();
                 Console.WriteLine("The bit depth should be 8 or 16.");
 
@@ -44,13 +44,13 @@ namespace TiffRescue
             var bits = format.ToLower().Split('x');
             var width = int.Parse(bits[0]);
             var height = int.Parse(bits[1]);
-            var bpp = int.Parse(bits[2])/8;
+            var bpp = 2;
 
             var path = args[1];
             if (!Path.IsPathRooted(path))
                 path = Path.Combine(Environment.CurrentDirectory, path);
 
-            Console.WriteLine($"Reading from {path} as {width}x{height}x{bpp*8} bytes per pixel");
+            Console.WriteLine($"Reading from {path} as {width}x{height}x{bpp*8} bits per pixel");
 
 
             var sourceTif = path;
